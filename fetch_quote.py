@@ -9,7 +9,7 @@ author_list = []
 driver.get("https://www.brainyquote.com/quote_of_the_day")
 
 content = driver.page_source
-soup = BeautifulSoup(content,features="lxml")
+soup = BeautifulSoup(content,features='html.parser')
 
 for i in soup.findAll('div',attrs={'class':'qotd-q-cntr'}):
 	temp_quote = i.find('a', attrs={'title':'view quote'})
