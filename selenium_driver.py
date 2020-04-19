@@ -1,9 +1,13 @@
 from selenium import webdriver
+import os
 
+
+Driverpath = '/usr/bin/chromedriver'
+path = os.getcwd()+'/temp_quote/'
 
 options = webdriver.ChromeOptions()
-path = '/home/tr4cer/Raze-Bot/temp_quote/'
 prefs = {'download.default_directory' : path}
 options.add_experimental_option('prefs', prefs)
 options.add_argument("--headless") 
-driver = webdriver.Chrome("/usr/bin/chromedriver", chrome_options=options)
+
+driver = webdriver.Chrome(Driverpath, chrome_options=options)
